@@ -4,37 +4,37 @@ const employeesOnTable = document.querySelector("#manage-employees");
 
 const showEmployees = () => {
     employeesOnTable.innerHTML="";
-    
-    for(let employee of Users) {
+        
+    Users.forEach(user=>{
         let list = document.createElement("tr");
         list.classList.add("table-employee-info");
         //checkear cual funciona para borrar!
-        list.id= `fila-${employee.id}`
-        list.value=employee.id;
+        list.id= `fila-${user.id}`
+        list.value=user.id;
         
         let checkbox = document.createElement("td");
-        checkbox.value=employee.id;
+        checkbox.value=user.id;
         
         let newId = document.createElement("input");
         newId.setAttribute("type", "checkbox");
         newId.classList.add("table-checkbox");
         
         //checkear cual funciona para borrar!
-        newId.value=employee.id;
-        newId.id= `id-${employee.id}`;
-        newId.innerHTML=employee.id;
+        newId.value=user.id;
+        newId.id= `id-${user.id}`;
+        newId.innerHTML=user.id;
         
         let newFullName = document.createElement("td");
-        newFullName.innerHTML = employee.fullname;
+        newFullName.innerHTML = user.fullname;
 
         let newEmail = document.createElement("td");
-        newEmail.innerHTML = employee.email;
+        newEmail.innerHTML = user.email;
 
         let newAddress = document.createElement("td");
-        newAddress.innerHTML = employee.address;
+        newAddress.innerHTML = user.address;
 
         let newPhone = document.createElement("td");
-        newPhone.innerHTML = employee.phone;
+        newPhone.innerHTML = user.phone;
 
         let iconos = document.createElement("td");
         let newEdit = document.createElement("i");
@@ -81,7 +81,7 @@ const showEmployees = () => {
         iconos.appendChild(newDelete);
         employeesOnTable.appendChild(list);
         
-    }
+    })
 }
 
 //CARGA LA PAGINA
