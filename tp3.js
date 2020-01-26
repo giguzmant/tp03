@@ -19,10 +19,10 @@ const getAllUsers = async () => {
     try {
         const res = await axios.get(`${baseUrl}`)
         Users = res.data
-        imprimir()
+        //imprimir();
     }
     catch (err) {
-        handleError(err)
+        handleError(err);
     }
 };
 
@@ -46,6 +46,7 @@ const postUser = async (fullname, email, address, phone) => {
         })
         newUser = res.data
         Users.push(newUser)
+        load();
     }
     catch (err){
         handleError(err)
@@ -74,17 +75,21 @@ const putUser = async (id, fullname, email, address, phone) => {
 };
 
 const deleteUser = async (id) => {
-    try {
+    try {   
         const res = await axios.delete(`${baseUrl}/${id}`)
         const index = Users.findIndex(user => {
             return user.id == id
         })
         Users.splice(index, 1)
+        load();
     }
     catch (err){
         handleError(err)
     }
+    
 };
+
+
 /*
 getAllUsers();
 const imprimir = () => {
@@ -129,3 +134,5 @@ const imprimir = () => {
         })
     })
 }*/
+
+
