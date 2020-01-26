@@ -64,7 +64,7 @@ const showEmployees = () => {
         //CONFIMARCION DE DELETE, SOLO BORRA EL ÚLTIMO ¿?¿?¿
         const deleteBttn = document.querySelector("#delete-bttn");
         deleteBttn.onclick = function() {
-            deleteUser(newId.value);
+            deleteUser(user.id);
         list.remove();
         let deleteEmployee1 = document.querySelector("#delete-message");
         deleteEmployee1.style.display="none";
