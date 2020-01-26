@@ -1,0 +1,114 @@
+#form-add , #form-edit{
+    display: none;
+    background-color:$opacity-modal; 
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+    form{
+        background-color: $background-form;
+        border: 1px solid $border-color-form;
+        margin: 5% auto;
+        width: 30%;
+        
+        .form-info-required {
+            display: flex;
+            flex-direction: column;
+            
+            .form-header {
+                align-items: flex-start;
+                border-bottom: 1px solid #e9e9e9;
+                display: flex;
+                justify-content: space-between;
+                padding: $padding-modal;
+                
+                h4{
+                color: #566787;
+                font-size: 18px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                }
+                
+                .form-close{
+                    color:$close-icon-color;
+                    cursor: pointer;
+                    font-size: 18px;
+                    font-weight: 300;
+                }
+            }
+            
+            .form-content{
+                padding: $padding-modal;
+                font-size: 14px;
+                color: $color-form;
+            }
+            
+            .form-content > div {
+                padding-bottom: 15px;
+            }
+            
+           .form-labels > div  input {
+               margin-top: 5px;
+               width: 100%;
+               height: 30px;
+               border-radius: 3px;
+               border: 1px solid $border-color-input;
+           } 
+           
+           .form-textarea {
+            width: 100%;
+            height: 50px;
+            border-radius: 3px;
+            border: 1px solid $border-color-input;
+           }
+            
+            .form-bottom {
+                padding: $padding-modal;
+                background-color: $border-table-elements;
+                display: flex;
+                flex-direction: column;
+                
+                .form-bottom-submit{
+                    display: flex;
+                    align-self: flex-end;
+
+                    
+                    .form-submit-add {
+                        background-color: $bg-color-add-bttn;
+                        color: $color-white;
+                        width: 100px;
+                        height: 35px;
+                        margin-left: 5px;
+                        font-family: $font;
+                        font-size: 15px;
+                        border-radius: 2px;
+                    }
+                    
+                
+                    .form-cancel {
+                        width: 100px;
+                        height: 35px;
+                        font-family: $font;
+                        font-size: 15px;
+                        color: #333333;
+                        border: 1px solid $border-color-input;
+                        border-radius: 2px;
+                    }
+                }
+            }       
+        }
+    }
+    
+    .form-submit-save{
+        background-color: $bg-color-save-bttn;
+        color: $color-white;
+        width: 100px;
+        height: 35px;
+        margin-left: 5px;
+        font-family: $font;
+        font-size: 15px;
+        border-radius: 2px;
+    }
+}
