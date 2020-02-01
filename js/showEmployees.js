@@ -8,21 +8,12 @@ const showEmployees = () => {
     Users.forEach(user=>{
         let list = document.createElement("tr");
         list.classList.add("table-employee-info");
-        //checkear cual funciona para borrar!
-        list.id= `fila-${user.id}`
-        list.value=user.id;
-        
+      
         let checkbox = document.createElement("td");
-        checkbox.value=user.id;
         
         let newId = document.createElement("input");
         newId.setAttribute("type", "checkbox");
         newId.classList.add("table-checkbox");
-        
-        //checkear cual funciona para borrar!
-        newId.value=user.id;
-        newId.id= `id-${user.id}`;
-        newId.innerHTML=user.id;
         
         let newFullName = document.createElement("td");
         newFullName.innerHTML = user.fullname;
@@ -36,13 +27,13 @@ const showEmployees = () => {
         let newPhone = document.createElement("td");
         newPhone.innerHTML = user.phone;
 
-        let iconos = document.createElement("td");
+        let iconosContainer = document.createElement("td");
         let newEdit = document.createElement("i");
         newEdit.id = "edit-icon-button";
-        newEdit.classList.add("material-icons");
-        newEdit.classList.add("edit-icon");
         newEdit.title = "Edit";
         newEdit.innerHTML = "&#xE254;"
+        newEdit.classList.add("material-icons");
+        newEdit.classList.add("edit-icon");
 
         let newDelete = document.createElement("i");
         newDelete.id = "delete-icon-button";
@@ -51,35 +42,42 @@ const showEmployees = () => {
         newDelete.title = "Delete";
         newDelete.innerHTML = "&#xE872;";
         
-        //EVENTO PARA QUE SALGA MODAL
-        newDelete.addEventListener('click', ()=>{
-            let deleteEmployee = document.querySelector("#delete-message");
-            deleteEmployee.style.display="block";
-            
-            let closeDeleteMessage = document.querySelector(".modal-delete-close");
-            closeDeleteMessage.onclick = function () {
-                deleteEmployee.style.display="none";
-            }
-        })
-        //CONFIMARCION DE DELETE, SOLO BORRA EL ÚLTIMO ¿?¿?¿
-        const deleteBttn = document.querySelector("#delete-bttn");
-        deleteBttn.onclick = function() {
-            deleteUser(user.id);
-        list.remove();
-        let deleteEmployee1 = document.querySelector("#delete-message");
-        deleteEmployee1.style.display="none";
-        }
-        
         list.appendChild(checkbox);
         checkbox.appendChild(newId);
         list.appendChild(newFullName);
         list.appendChild(newEmail);
         list.appendChild(newAddress);
         list.appendChild(newPhone);
-        list.appendChild(iconos);
-        iconos.appendChild(newEdit);
-        iconos.appendChild(newDelete);
+        list.appendChild(iconosContainer);
+        iconosContainer.appendChild(newEdit);
+        iconosContainer.appendChild(newDelete);
         employeesOnTable.appendChild(list);
+        
+        //EVENTO PARA QUE SALGA MODAL Y ELIMINE 
+        
+        newDelete.addEventListener('click', ()=>{
+            const deleteEmployee = document.querySelector("#delete-message");
+            deleteEmployee.style.display="block";
+            
+            let closeDeleteMessage = document.querySelector(".modal-delete-close");
+            closeDeleteMessage.onclick = function () {
+                deleteEmployee.style.display="none";
+            }
+            
+            let cancelDelete = document.querySelector(".modal-cancel-delete");
+            cancelDelete.onclick= function() {
+               deleteEmployee.style.display="none";
+            }
+            
+            let deleteBttn = document.querySelector("#delete");    
+            
+            deleteBttn.onclick = function() {
+                deleteUser(user.id);
+                list.remove();
+            deleteEmployee.style.display="none";
+            }
+            
+        })
         
     })
 }
