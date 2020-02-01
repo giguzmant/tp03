@@ -32,13 +32,11 @@ const showEmployees = () => {
         newEdit.id = "edit-icon-button";
         newEdit.title = "Edit";
         newEdit.innerHTML = "&#xE254;"
-        newEdit.classList.add("material-icons");
-        newEdit.classList.add("edit-icon");
+        newEdit.classList.add("material-icons", "edit-icon");
 
         let newDelete = document.createElement("i");
         newDelete.id = "delete-icon-button";
-        newDelete.classList.add("material-icons");
-        newDelete.classList.add("delete-icon");
+        newDelete.classList.add("material-icons", "delete-icon");
         newDelete.title = "Delete";
         newDelete.innerHTML = "&#xE872;";
         
