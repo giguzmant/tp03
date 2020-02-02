@@ -105,67 +105,67 @@
   top: 0;
   width: 100%;
 }
-#form-add form, #form-edit form {
+#form-add .form, #form-edit .form {
   background-color: #fefefe;
   border: 1px solid #888;
   margin: 5% auto;
   width: 30%;
 }
-#form-add form .form-info-required, #form-edit form .form-info-required {
+#form-add .form .form-info-required, #form-edit .form .form-info-required {
   display: flex;
   flex-direction: column;
 }
-#form-add form .form-info-required .form-header, #form-edit form .form-info-required .form-header {
+#form-add .form .form-info-required .form-header, #form-edit .form .form-info-required .form-header {
   align-items: flex-start;
   border-bottom: 1px solid #e9e9e9;
   display: flex;
   justify-content: space-between;
   padding: 20px 30px;
 }
-#form-add form .form-info-required .form-header h4, #form-edit form .form-info-required .form-header h4 {
+#form-add .form .form-info-required .form-header h4, #form-edit .form .form-info-required .form-header h4 {
   color: #566787;
   font-size: 18px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
-#form-add form .form-info-required .form-header .form-close, #form-edit form .form-info-required .form-header .form-close {
+#form-add .form .form-info-required .form-header .form-close, #form-edit .form .form-info-required .form-header .form-close {
   color: #aca5a5;
   cursor: pointer;
   font-size: 18px;
   font-weight: 300;
 }
-#form-add form .form-info-required .form-content, #form-edit form .form-info-required .form-content {
+#form-add .form .form-info-required .form-content, #form-edit .form .form-info-required .form-content {
   padding: 20px 30px;
   font-size: 14px;
   color: #566787;
 }
-#form-add form .form-info-required .form-content > div, #form-edit form .form-info-required .form-content > div {
+#form-add .form .form-info-required .form-content > div, #form-edit .form .form-info-required .form-content > div {
   padding-bottom: 15px;
 }
-#form-add form .form-info-required .form-labels > div input, #form-edit form .form-info-required .form-labels > div input {
+#form-add .form .form-info-required .form-labels > div input, #form-edit .form .form-info-required .form-labels > div input {
   margin-top: 5px;
   width: 100%;
   height: 30px;
   border-radius: 3px;
   border: 1px solid #d4d4d4;
 }
-#form-add form .form-info-required .form-textarea, #form-edit form .form-info-required .form-textarea {
+#form-add .form .form-info-required .form-textarea, #form-edit .form .form-info-required .form-textarea {
   width: 100%;
   height: 50px;
   border-radius: 3px;
   border: 1px solid #d4d4d4;
 }
-#form-add form .form-info-required .form-bottom, #form-edit form .form-info-required .form-bottom {
+#form-add .form .form-info-required .form-bottom, #form-edit .form .form-info-required .form-bottom {
   padding: 20px 30px;
   background-color: #e9e9e9;
   display: flex;
   flex-direction: column;
 }
-#form-add form .form-info-required .form-bottom .form-bottom-submit, #form-edit form .form-info-required .form-bottom .form-bottom-submit {
+#form-add .form .form-info-required .form-bottom .form-bottom-submit, #form-edit .form .form-info-required .form-bottom .form-bottom-submit {
   display: flex;
   align-self: flex-end;
 }
-#form-add form .form-info-required .form-bottom .form-bottom-submit .form-submit-add, #form-edit form .form-info-required .form-bottom .form-bottom-submit .form-submit-add {
+#form-add .form .form-info-required .form-bottom .form-bottom-submit .form-submit-add, #form-edit .form .form-info-required .form-bottom .form-bottom-submit .form-submit-add {
   background-color: #5cb85c;
   color: #fff;
   width: 100px;
@@ -175,7 +175,7 @@
   font-size: 15px;
   border-radius: 2px;
 }
-#form-add form .form-info-required .form-bottom .form-bottom-submit .form-cancel, #form-edit form .form-info-required .form-bottom .form-bottom-submit .form-cancel {
+#form-add .form .form-info-required .form-bottom .form-bottom-submit .form-cancel, #form-edit .form .form-info-required .form-bottom .form-bottom-submit .form-cancel {
   width: 100px;
   height: 35px;
   font-family: "Varela Round", sans-serif;
