@@ -26,10 +26,10 @@ const getAllUsers = async () => {
     }
 };
 
-const getUser = async (HOLACUALSERIAELPARAMETRO) => {
+const searchUser = async (search) => {
     try {
-        const res = await fetch (`${baseUrl}/${id}`)
-        myUser = res.data
+        const res = await axios.get(`${baseUrl}?search=${search}`)
+         Users = res.data
     }
     catch (err) {
         handleError(err)
@@ -88,6 +88,7 @@ const deleteUser = async (id) => {
     }
     
 };
+
 
 
 /*
