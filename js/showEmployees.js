@@ -79,6 +79,19 @@ const showEmployees = () => {
         
     })
 }
+//Buscar y renderizar employess.
+const onSearch = async(search)=>{
+    await searchUser(search);
+    showEmployees();
+}
+//ejecutar busqueda luego de que el usurio ingresa enter.
+const search = document.getElementById("search")
+search.addEventListener("keyup",(event)=> {
+    if(event.key === "Enter"){
+         onSearch(event.target.value);
+    }
+
+});
 
 //CARGA LA PAGINA
 const load = async () => {
