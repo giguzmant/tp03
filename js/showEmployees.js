@@ -77,6 +77,28 @@ const showEmployees = () => {
             
         })
         
+        //newEdit es el nombre de la variable cuando creamos el icono de editar
+	    newEdit.addEventListener("click", ()=>{
+            //LLAMO AL MODAL
+            modifyModal();
+            //inputs de edit
+            let modifyFullName = document.querySelector("#user-name-update");
+            let modifyEmail = document.querySelector("#user-email-update");
+            let modifyAddress = document.querySelector("#user-address-update");
+            let modifyPhone = document.querySelector("#user-phone-update");
+            //PARA QUE APAREZCA #setteados LOS VALORES A MODIFICAR
+            modifyFullName.value = user.fullname;
+            modifyEmail.value =  user.email;
+            modifyAddress.value = user.address;
+            modifyPhone.value = user.phone;
+                const buttonModify = document.querySelector("#user-update");
+                buttonModify.onclick = function () {
+                putUser(user.id, modifyFullName.value, modifyEmail.value, modifyAddress.value, modifyPhone.value).then(showEmployees);
+                modifyUser.style.display="none";
+                event.preventDefault();
+                }
+       })
+        
     })
 }
 //Buscar y renderizar employess.
