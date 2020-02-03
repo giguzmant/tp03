@@ -94,6 +94,7 @@ const showEmployees = () => {
                 const buttonModify = document.querySelector("#user-update");
                 buttonModify.onclick = function () {
                 putUser(user.id, modifyFullName.value, modifyEmail.value, modifyAddress.value, modifyPhone.value).then(showEmployees);
+                const modifyUser = document.querySelector("#form-edit");
                 modifyUser.style.display="none";
                 event.preventDefault();
                 }
