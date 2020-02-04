@@ -9,8 +9,6 @@ let myUser = {
     phone: ""
 };
 
-let newUser;
-
 const handleError = err =>{
     alert(`Hubo un error. ${err}`);
 };
@@ -36,7 +34,55 @@ const searchUser = async (search) => {
     }
 };
 
-const postUser = async (fullname, email, address, phone) => {
+//MOSTRAR Y CERRAR MODAL ADD EMPLOYEE
+
+const addNewEmployeeButton = document.querySelector("#add-employee-button");
+const addEmployeeModal = document.querySelector("#form-add");
+addNewEmployeeButton.addEventListener("click", () =>{
+    addEmployeeModal.setAttribute("style", "display: block")
+});
+
+const closeAddEmployeeModal = document.querySelector("#close-add-modal");
+const cancelAddEmployeeModal = document.querySelector("#cancel-button")
+closeAddEmployeeModal.addEventListener("click", () =>{
+    addEmployeeModal.setAttribute("style", "display: none")
+});
+
+cancelAddEmployeeModal.addEventListener("click", () =>{
+    addEmployeeModal.setAttribute("style", "display: none")
+})
+
+const nameInput = document.querySelector("#input-name");
+const emailInput = document.querySelector("#input-email");
+const addressInput = document.querySelector("#input-adress");
+const numberInput = document.querySelector("#input-number");
+const submitButton = document.querySelector("#submit-button");
+
+const postUser = async () => {
+    let fullname = nameInput.value;
+    let email = emailInput.value;
+    let address = addressInput.value;
+    let phone = numberInput.value; 
+
+    let newEmployee = {
+        fullname,
+        email,
+        address,
+        phone
+    }
+    try {
+        const res = await axios.post(baseUrl, newEmployee)
+        Users.push(newEmployee)
+        load()
+    }
+    catch (err){
+        handleError(err)
+    }
+};
+
+submitButton.addEventListener("click", postUser())
+
+/*const postUser = async (fullname, email, address, phone) => {
     try {
         const res = await axios.post(`${baseUrl}`, {
             fullname,
@@ -51,7 +97,7 @@ const postUser = async (fullname, email, address, phone) => {
     catch (err){
         handleError(err)
     }
-};
+};*/
 
 const putUser = async (id, fullname, email, address, phone) => {
     let data = {

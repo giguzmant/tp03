@@ -13,12 +13,12 @@
 
     <title>CRUD</title>
 </head>
-
+  
 <body>
     <section class="container-table">
         <div class="header">
             <h4>Manage Employees</h4>
-            <button class="button-add-employee" id="add-employee-bttn">
+            <button class="button-add-employee" id="add-employee-button">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 Add New Employee
             </button>
@@ -61,7 +61,7 @@
             <form class="form-info-required">
                 <div class="form-header">
                     <h4>Add Employee</h4>
-                    <i class="material-icons form-close">
+                    <i class="material-icons form-close" id="close-add-modal">
                         close
                     </i>
                 </div>
@@ -93,8 +93,8 @@
                 </div>
                 <div class="form-bottom">
                     <div class="form-bottom-submit">
-                        <button class="form-cancel">Cancel</button>
-                        <button type="submit" class="form-submit-add">Add</button>
+                        <button class="form-cancel" id="cancel-button">Cancel</button>
+                        <button type="submit" class="form-submit-add" id="submit-button">Add</button>
                     </div>
                 </div>
         </form>
