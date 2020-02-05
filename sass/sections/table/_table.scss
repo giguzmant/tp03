@@ -101,11 +101,13 @@
             .edit-icon {
                 color: $color-icon-edit;
                 cursor: pointer;
+                zoom: 115%;
             }
             
             .delete-icon {
                 color: $color-icon-delete;
                 cursor: pointer;
+                zoom: 115%;
             }
         }
     }

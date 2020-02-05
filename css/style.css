@@ -90,10 +90,12 @@
 .container-table .table-content .table .edit-icon {
   color: #ffc720;
   cursor: pointer;
+  zoom: 115%;
 }
 .container-table .table-content .table .delete-icon {
   color: #f5564a;
   cursor: pointer;
+  zoom: 115%;
 }
 
 #form-add, #form-edit {
@@ -133,6 +135,12 @@
   cursor: pointer;
   font-size: 18px;
   font-weight: 300;
+}
+#form-add .form .form-info-required .form-header .form-close:hover, #form-edit .form .form-info-required .form-header .form-close:hover {
+  color: #333333;
+  cursor: pointer;
+  zoom: 120%;
+  transition: 1s;
 }
 #form-add .form .form-info-required .form-content, #form-edit .form .form-info-required .form-content {
   padding: 20px 30px;
@@ -175,6 +183,13 @@
   font-size: 15px;
   border-radius: 2px;
 }
+#form-add .form .form-info-required .form-bottom .form-bottom-submit .form-submit-add:hover, #form-edit .form .form-info-required .form-bottom .form-bottom-submit .form-submit-add:hover {
+  cursor: pointer;
+  background-color: #479647;
+}
+#form-add .form .form-info-required .form-bottom .form-bottom-submit .form-submit-add:active, #form-edit .form .form-info-required .form-bottom .form-bottom-submit .form-submit-add:active {
+  zoom: 92%;
+}
 #form-add .form .form-info-required .form-bottom .form-bottom-submit .form-cancel, #form-edit .form .form-info-required .form-bottom .form-bottom-submit .form-cancel {
   width: 100px;
   height: 35px;
@@ -183,6 +198,13 @@
   color: #333333;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
+}
+#form-add .form .form-info-required .form-bottom .form-bottom-submit .form-cancel:hover, #form-edit .form .form-info-required .form-bottom .form-bottom-submit .form-cancel:hover {
+  cursor: pointer;
+}
+#form-add .form .form-info-required .form-bottom .form-bottom-submit .form-cancel:active, #form-edit .form .form-info-required .form-bottom .form-bottom-submit .form-cancel:active {
+  box-shadow: inset 0 0 8px #333;
+  zoom: 92%;
 }
 #form-add .form-submit-save, #form-edit .form-submit-save {
   background-color: #5bc0de;

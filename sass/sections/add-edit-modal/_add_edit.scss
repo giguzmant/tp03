@@ -36,6 +36,13 @@
                     cursor: pointer;
                     font-size: 18px;
                     font-weight: 300;
+
+                    &:hover{
+                        color: $cancel-bttn-color;
+                        cursor: pointer;
+                        zoom: 120%;
+                        transition: 1s;
+                    }
                 }
             }
             
@@ -84,6 +91,14 @@
                         font-family: $font;
                         font-size: 15px;
                         border-radius: 2px;
+
+                        &:hover{
+                            cursor: pointer;
+                            background-color: $bg-color-add-bttn-hover;
+                        }
+                        &:active{
+                            zoom: 92%;
+                        }
                     }
                     
                 
@@ -95,6 +110,13 @@
                         color: #333333;
                         border: 1px solid $border-color-input;
                         border-radius: 2px;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                        &:active {
+                            box-shadow: inset 0 0 8px #333;
+                            zoom: 92%;
+                        }
                     }
                 }
             }       
