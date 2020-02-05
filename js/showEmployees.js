@@ -102,6 +102,8 @@ const showEmployees = () => {
         
     })
 }
+
+
 //Buscar y renderizar employess.
 const onSearch = async(search)=>{
     await searchUser(search);
@@ -115,6 +117,7 @@ search.addEventListener("keyup",(event)=> {
     }
 
 });
+
 
 //CARGA LA PAGINA
 const load = async () => {

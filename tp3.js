@@ -35,7 +35,7 @@ const searchUser = async (search) => {
 };
 
 //MOSTRAR Y CERRAR MODAL ADD EMPLOYEE
-
+/*
 const addNewEmployeeButton = document.querySelector("#add-employee-button");
 const addEmployeeModal = document.querySelector("#form-add");
 addNewEmployeeButton.addEventListener("click", () =>{
@@ -80,7 +80,7 @@ const postUser = async () => {
     }
 };
 
-submitButton.addEventListener("click", postUser())
+submitButton.addEventListener("click", postUser())*/
 
 /*const postUser = async (fullname, email, address, phone) => {
     try {
