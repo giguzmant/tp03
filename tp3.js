@@ -108,12 +108,8 @@ const putUser = async (id, fullname, email, address, phone) => {
     };
     try {
         const res = await axios.put(`${baseUrl}/${id}`, data)
-        for (let i = 0; i < Users.length; i++) {
-            if(Users[i].id == id) {
-                Users[i] = res.data;
-            }
-        }
-        imprimir();
+        Users = res.data;
+        showEmployees();
     }
     catch (err){
         handleError(err);
