@@ -34,6 +34,7 @@ const searchUser = async (search) => {
     }
 };
 
+/*
 //MOSTRAR Y CERRAR MODAL ADD EMPLOYEE
 
 const addNewEmployeeButton = document.querySelector("#add-employee-button");
@@ -52,11 +53,10 @@ cancelAddEmployeeModal.addEventListener("click", () =>{
     addEmployeeModal.setAttribute("style", "display: none")
 })
 
-const nameInput = document.querySelector("#input-name");
-const emailInput = document.querySelector("#input-email");
-const addressInput = document.querySelector("#input-adress");
-const numberInput = document.querySelector("#input-number");
-const submitButton = document.querySelector("#submit-button");
+    const nameInput = document.querySelector("#input-name");
+    const emailInput = document.querySelector("#input-email");
+    const addressInput = document.querySelector("#input-address");
+    const numberInput = document.querySelector("#input-phone");
 
 const postUser = async () => {
     let fullname = nameInput.value;
@@ -72,14 +72,13 @@ const postUser = async () => {
     }
     try {
         const res = await axios.post(baseUrl, newEmployee)
-        Users.push(newEmployee)
-        load()
+        Users.push(res.data)
     }
     catch (err){
         handleError(err)
     }
 };
-
+const submitButton = document.querySelector("#submit-button");
 submitButton.addEventListener("click", postUser())
 
 /*const postUser = async (fullname, email, address, phone) => {

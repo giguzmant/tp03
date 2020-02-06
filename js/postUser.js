@@ -39,7 +39,7 @@ const postUser = async () =>{
         const res = await axios.post(baseUrl, newEmployee);
         newEmployee = res.data
         Users.push(newEmployee)
-        load();
+        showEmployees();
     }
     catch (err){
         handleError(err)

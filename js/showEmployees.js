@@ -74,7 +74,7 @@ const showEmployees = () => {
                 list.remove();
             deleteEmployee.style.display="none";
             }
-            
+     
         })
         
     })
