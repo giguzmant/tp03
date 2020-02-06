@@ -91,12 +91,16 @@ const showEmployees = () => {
             modifyEmail.value =  user.email;
             modifyAddress.value = user.address;
             modifyPhone.value = user.phone;
+            
                 const buttonModify = document.querySelector("#user-update");
+                
                 buttonModify.onclick = function () {
-                putUser(user.id, modifyFullName.value, modifyEmail.value, modifyAddress.value, modifyPhone.value).then(showEmployees);
+                
+                putUser(user.id, modifyFullName.value, modifyEmail.value, modifyAddress.value, modifyPhone.value);
                 const modifyUser = document.querySelector("#form-edit");
                 modifyUser.style.display="none";
                 event.preventDefault();
+                
                 }
        })
         

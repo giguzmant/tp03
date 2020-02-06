@@ -1,3 +1,21 @@
+const putUser = async (id, fullname, email, address, phone) => {
+    let data = {
+        fullname,
+        email,
+        address,
+        phone
+    };
+    try {
+        const res = await axios.put(`${baseUrl}/${id}`, data)
+        Users = res.data;
+        showEmployees();
+    }
+    catch (err){
+        handleError(err);
+    }
+};
+
+
 const modifyModal = () => {
         //MODAL PARA QUE APAREZCA COMO BLOCK FORM DE MODIFICAR
         const modifyUser = document.querySelector("#form-edit");

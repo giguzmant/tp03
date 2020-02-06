@@ -99,22 +99,7 @@ submitButton.addEventListener("click", postUser())*/
     }
 };*/
 
-const putUser = async (id, fullname, email, address, phone) => {
-    let data = {
-        fullname,
-        email,
-        address,
-        phone
-    };
-    try {
-        const res = await axios.put(`${baseUrl}/${id}`, data)
-        Users = res.data;
-        showEmployees();
-    }
-    catch (err){
-        handleError(err);
-    }
-};
+
 
 const deleteUser = async (id) => {
     try {   
