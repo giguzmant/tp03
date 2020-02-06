@@ -51,7 +51,7 @@ const addModal = () => {
         event.preventDefault();
         
         postUser(nameInput.value, emailInput.value, adressInput.value, numberInput.value);
-        //PARA QUE AL AGREGAR EL MODAL SE VAYA
+        
         const addEmployeeModal = document.querySelector("#form-add");
         addEmployeeModal.setAttribute("style", "display: none")
 
