@@ -19,7 +19,7 @@ const putUser = async (id, fullname, email, address, phone) => {
 const modifyModal = () => {
         const modifyUser = document.querySelector("#form-edit");
         modifyUser.style.display="block";
-        const closeModifyModal = document.querySelector("#form-close-edit");
+        /*const closeModifyModal = document.querySelector("#form-close-edit");
         closeModifyModal.onclick = function () {
         modifyUser.style.display="none";
         }
@@ -27,5 +27,5 @@ const modifyModal = () => {
         const cancelModify = document.querySelector("#form-cancel-edit");
         cancelModify.onclick = function () {
             modifyUser.style.display="none";
-        }
+        }*/
     }

@@ -91,6 +91,13 @@ const showEmployees = () => {
        })
         
     })
+    
+        
+    
+    nameInput.innerHTML="";
+    addressInput.innerHTML="";
+    numberInput.innerHTML="";
+    emailInput.innerHTML="";
 }
 
 
