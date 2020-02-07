@@ -11,9 +11,5 @@ let myUser = {
 
 const handleError = err =>{
     alert(`Hubo un error. ${err}`);
+
 };
-
-
-
-
-

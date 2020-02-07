@@ -63,7 +63,7 @@ const showEmployees = () => {
                 const deleteEmployee = document.querySelector("#delete-message");
                 deleteEmployee.style.display="none";
             }
-            
+     
         })
         
 	    newEdit.addEventListener("click", ()=>{
