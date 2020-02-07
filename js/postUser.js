@@ -31,10 +31,8 @@ const addModal = () => {
         addEmployeeModal.setAttribute("style", "display: none")
     }
     
-}
-
     
-
+}
     const addNewEmployeeButton = document.querySelector("#add-employee-button");
     addNewEmployeeButton.addEventListener("click", () =>{
     addModal();
@@ -49,10 +47,9 @@ const addModal = () => {
 
     submitButton.addEventListener("click", ()=> {
         event.preventDefault();
-        
         postUser(nameInput.value, emailInput.value, adressInput.value, numberInput.value);
         //PARA QUE AL AGREGAR EL MODAL SE VAYA
         const addEmployeeModal = document.querySelector("#form-add");
         addEmployeeModal.setAttribute("style", "display: none")
 
-    }) 
+    })   
