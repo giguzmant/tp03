@@ -13,12 +13,12 @@
 
     <title>CRUD</title>
 </head>
-
+  
 <body>
     <section class="container-table">
         <div class="header">
             <h4>Manage Employees</h4>
-            <button class="button-add-employee" id="add-employee-bttn">
+            <button class="button-add-employee" id="add-employee-button">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 Add New Employee
             </button>
@@ -61,7 +61,7 @@
             <form class="form-info-required">
                 <div class="form-header">
                     <h4>Add Employee</h4>
-                    <i class="material-icons form-close">
+                    <i class="material-icons form-close" id="close-add-modal">
                         close
                     </i>
                 </div>
@@ -69,32 +69,32 @@
                     <div class="form-labels">
                         <label>Name</label>
                         <div>
-                            <input type="text" required>
+                            <input type="text" required id="input-name">
                         </div>
                     </div>
                     <div class="form-labels">
                         <label>Email</label>
                         <div>
-                            <input type="email" required>
+                            <input type="email" required id="input-email">
                         </div>
                     </div>
                     <div class="form-labels">
                         <label>Adress</label>
                         <div>
-                            <textarea required class="form-textarea"></textarea>
+                            <textarea required class="form-textarea" id="input-adress"></textarea>
                         </div>
                     </div>
                     <div class="form-labels">
                         <label>Phone</label>
                         <div>
-                            <input type="number" required>
+                            <input type="number" required id="input-number">
                         </div>
                     </div>
                 </div>
                 <div class="form-bottom">
                     <div class="form-bottom-submit">
-                        <button class="form-cancel">Cancel</button>
-                        <button type="submit" class="form-submit-add">Add</button>
+                        <button class="form-cancel" id="cancel-button">Cancel</button>
+                        <button type="submit" class="form-submit-add" id="submit-button">Add</button>
                     </div>
                 </div>
         </form>
@@ -167,9 +167,13 @@
             </div>
         </div>
     </section>
-    <script src="js/modify.js"></script>
     <script src="tp3.js"></script>
-    <script src="js/showEmployees.js"></script>
+    <script src="js/getAllUsers.js"></script>
+    <script src="js/searchUser.js"></script>
+    <script src="js/putUser.js"></script>
+    <script src="js/postUser.js"></script>
+    <script src="js/deleteUser.js"></script>
+    <script src="js/ManageEmployees.js"></script>
 </body>
 
 </html>
