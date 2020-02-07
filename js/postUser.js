@@ -42,7 +42,7 @@ const addModal = () => {
 
     const nameInput = document.querySelector("#input-name");
     const emailInput = document.querySelector("#input-email");
-    const adressInput = document.querySelector("#input-adress");
+    const adressInput = document.querySelector("#input-address");
     const numberInput = document.querySelector("#input-number");
     const submitButton = document.querySelector("#submit-button");
 
