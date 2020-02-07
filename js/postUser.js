@@ -1,3 +1,14 @@
+const nameInput = document.querySelector("#input-name");
+const emailInput = document.querySelector("#input-email");
+const addressInput = document.querySelector("#input-address");
+const numberInput = document.querySelector("#input-number");
+
+const addNameValidation = document.querySelector("#validation-add-name");
+const addEmailValidation = document.querySelector("#validation-add-email");
+const addAddressValidation = document.querySelector("#validation-add-address");
+const addPhoneValidation = document.querySelector("#validation-add-phone");
+
+
 const postUser = async (fullname, email, address, phone) => {
     try {
         const res = await axios.post(`${baseUrl}`, {
@@ -26,17 +37,19 @@ const addModal = () => {
 
     const closeAddEmployeeModal = document.querySelector("#close-add-modal");
     closeAddEmployeeModal.onclick = function () {
-        addEmployeeModal.setAttribute("style", "display: none")
+        addEmployeeModal.setAttribute("style", "display: none");
+        
         addNameValidation.innerHTML="";
         addPhoneValidation.innerHTML = "";
         addAddressValidation.innerHTML="";
         addEmailValidation.innerHTML = "";
         
     }
-    event.preventDefault();
-    const cancelAddEmployeeModal = document.querySelector("#cancel-add")
+    const cancelAddEmployeeModal = document.querySelector("#cancel-add");
+    
     cancelAddEmployeeModal.onclick = function () {
         addEmployeeModal.setAttribute("style", "display: none");
+        
         addNameValidation.innerHTML="";
         addPhoneValidation.innerHTML = "";
         addAddressValidation.innerHTML="";
@@ -52,21 +65,8 @@ const addModal = () => {
         addModal();
     });
 
-    const nameInput = document.querySelector("#input-name");
-    const emailInput = document.querySelector("#input-email");
-    const addressInput = document.querySelector("#input-address");
-    const numberInput = document.querySelector("#input-number");
     const submitButton = document.querySelector("#submit-button");
-    
-    
-    const addNameValidation = document.querySelector("#validation-add-name");
-    const addEmailValidation = document.querySelector("#validation-add-email");
-    const addAddressValidation = document.querySelector("#validation-add-address");
-    const addPhoneValidation = document.querySelector("#validation-add-phone");
-
-
     submitButton.addEventListener("click", ()=> {
-        event.preventDefault();
 
         let hasError = false;
         if(!nameInput.checkValidity()) {
@@ -94,6 +94,7 @@ const addModal = () => {
             postUser(nameInput.value, emailInput.value, addressInput.value, numberInput.value);
             const addEmployeeModal = document.querySelector("#form-add");
             addEmployeeModal.setAttribute("style", "display: none");
+            
             addNameValidation.innerHTML="";
             addPhoneValidation.innerHTML = "";
             addAddressValidation.innerHTML="";
