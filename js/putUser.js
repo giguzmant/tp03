@@ -19,14 +19,12 @@ const putUser = async (id, fullname, email, address, phone) => {
 const modifyModal = () => {
         const modifyUser = document.querySelector("#form-edit");
         modifyUser.style.display="block";
-        event.preventDefault();
-        const closeModifyModal = document.querySelector(".form-close");
-        
+        const closeModifyModal = document.querySelector("#form-close-edit");
         closeModifyModal.onclick = function () {
         modifyUser.style.display="none";
         }
         
-        const cancelModify = document.querySelector(".form-cancel");
+        const cancelModify = document.querySelector("#form-cancel-edit");
         cancelModify.onclick = function () {
             modifyUser.style.display="none";
         }
