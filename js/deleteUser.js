@@ -4,7 +4,7 @@ const deleteUser = async (id) => {
         const index = Users.findIndex(user => {
             return user.id == id
         })
-        Users.splice(index, 1)
+        borrar(index)
         load();
     }
     catch (err){
@@ -12,6 +12,17 @@ const deleteUser = async (id) => {
     }
     
 };
+const borrar = (index)=> {
+    Users.splice(index, 1)
+}
+
+
+
+
+
+
+
+
 
 const deleteModal = () => {
     const deleteEmployee = document.querySelector("#delete-message");

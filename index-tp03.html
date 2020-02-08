@@ -13,7 +13,7 @@
 
     <title>CRUD</title>
 </head>
-  
+
 <body>
     <section class="container-table">
         <div class="header">
@@ -25,7 +25,7 @@
         </div>
         <div>
             <div class="container-input">
-                <input  id="search" type="text" placeholder="Filter..." class="input-filter">
+                <input id="search" type="text" placeholder="Filter..." class="input-filter">
             </div>
             <div class=" table-content">
                 <table class="table">
@@ -34,7 +34,7 @@
                         <th><input type="checkbox" class="table-checkbox" /></th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Adress</th>
+                        <th>Address</th>
                         <th>Phone</th>
                         <th>Actions</th>
                     </tr>
@@ -58,7 +58,7 @@
     <!--MODAL ADD-->
     <section id="form-add">
         <div class="form">
-            <form class="form-info-required">
+            <div class="form-info-required">
                 <div class="form-header">
                     <h4>Add Employee</h4>
                     <i class="material-icons form-close" id="close-add-modal">
@@ -70,34 +70,41 @@
                         <label>Name</label>
                         <div>
                             <input type="text" id="input-name" required>
+                            <p id="validation-add-name"></p>
                         </div>
                     </div>
                     <div class="form-labels">
                         <label>Email</label>
                         <div>
                             <input type="email" id="input-email" required>
+                            <p id="validation-add-email"></p>
                         </div>
                     </div>
                     <div class="form-labels">
-                        <label>Adress</label>
+                        <label>Address</label>
                         <div>
-                            <textarea required class="form-textarea" id="input-address"></textarea>
+                            <textarea class="form-textarea" id="input-address" required></textarea>
+                            <p id="validation-add-address"></p>
+
                         </div>
                     </div>
                     <div class="form-labels">
                         <label>Phone</label>
                         <div>
                             <input type="number" required id="input-number">
+                            <p id="validation-add-phone"></p>
+
                         </div>
                     </div>
                 </div>
                 <div class="form-bottom">
                     <div class="form-bottom-submit">
-                        <button class="form-cancel" id="cancel-button">Cancel</button>
+                        <button class="form-cancel" id="cancel-add">Cancel</button>
                         <button type="submit" class="form-submit-add" id="submit-button">Add</button>
                     </div>
                 </div>
-        </form>
+            </div>
+        </div>
     </section>
 
     <!--MODAL EDIT-->
@@ -115,30 +122,34 @@
                         <label>Name</label>
                         <div>
                             <input id="user-name-update" type="text" required>
+                            <p id="validation-edit-name"></p>
                         </div>
                     </div>
                     <div class="form-labels">
                         <label>Email</label>
                         <div>
-                            <input id="user-email-update" type="text" required>
+                            <input id="user-email-update" type="mail" required>
+                            <p id="validation-edit-email"></p>
                         </div>
                     </div>
                     <div class="form-labels">
-                        <label>Adress</label>
+                        <label>Address</label>
                         <div>
-                            <textarea id="user-address-update" name="message" required class="form-textarea"></textarea>
+                            <textarea id="user-address-update"  required class="form-textarea"></textarea>
+                            <p id="validation-edit-address"></p>
                         </div>
                     </div>
                     <div class="form-labels">
                         <label>Phone</label>
                         <div>
                             <input id="user-phone-update" type="number" required>
+                            <p id="validation-edit-phone"></p>
                         </div>
                     </div>
                 </div>
                 <div class="form-bottom">
                     <div class="form-bottom-submit">
-                        <button class="form-cancel" id="form-cancel-edit">Cancel</button>
+                        <button class="form-cancel" id="cancel-edit">Cancel</button>
                         <button type="submit" class="form-submit-save" id="user-update">Save</button>
                     </div>
                 </div>
@@ -162,7 +173,7 @@
             <div class="modal-bottom" id="modal-delete-bottom">
                 <div class="modal-bottom-submit-delete" id="submit-delete-options">
                     <button class="modal-cancel-delete">Cancel</button>
-                    <button class="modal-delete" id="delete" >Delete</button> 
+                    <button class="modal-delete" id="delete">Delete</button>
                 </div>
             </div>
         </div>
