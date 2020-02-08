@@ -93,7 +93,9 @@ const onDeleteClick = (userId) =>{
         hideDeleteModal();
         Users = removeUserFromList(userId, Users);
         showEmployees(Users);
-    }  
+    } else {
+        handleError("Error al eliminar usuario");
+    } 
 }
 
 const onSearch = async(search)=>{
@@ -111,7 +113,11 @@ search.addEventListener("keyup",(event)=> {
 //CARGA LA PAGINA
 const load = async () => {
     Users = await getAllUsers();
-    showEmployees(Users);
+    if (!Users) {
+        handleError('Error al cargar');
+    } else {
+        showEmployees(Users);
+    }
 }
 
 load();
