@@ -1,7 +1,5 @@
 const baseUrl = "https://tp-js-2-api-wjfqxquokl.now.sh/users";
 
-let Users = [];
-
 let myUser = {
     fullname: "",
     email: "",
@@ -11,5 +9,4 @@ let myUser = {
 
 const handleError = err =>{
     alert(`Hubo un error. ${err}`);
-
 };

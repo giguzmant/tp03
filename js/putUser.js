@@ -8,7 +8,7 @@ const putUser = async (id, fullname, email, address, phone) => {
     try {
         const res = await axios.put(`${baseUrl}/${id}`, data)
         Users = res.data;
-        showEmployees();
+        showEmployees(Users);
     }
     catch (err){
         handleError(err);

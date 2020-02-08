@@ -8,7 +8,7 @@ const postUser = async (fullname, email, address, phone) => {
         })
         newUser = res.data
         Users.push(newUser)
-        showEmployees();
+        showEmployees(Users);
     }
     catch (err){
         handleError(err)

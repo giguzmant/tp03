@@ -1,11 +1,12 @@
+let Users = [];
 const employeesOnTable = document.querySelector("#manage-employees");
 
 //showEmployees es como imprimir()
 
-const showEmployees = () => {
+const showEmployees = (users) => {
     employeesOnTable.innerHTML="";
         
-    Users.forEach(user=>{
+    users.forEach(user=>{
         let list = document.createElement("tr");
         list.classList.add("table-employee-info");
       
@@ -53,17 +54,10 @@ const showEmployees = () => {
         
         
         newDelete.addEventListener('click', ()=>{
-            deleteModal();
-            
+            showDeleteModal();
             let deleteBttn = document.querySelector("#delete");  
-            
-            deleteBttn.onclick = function() {
-                deleteUser(user.id);
-                list.remove();
-                const deleteEmployee = document.querySelector("#delete-message");
-                deleteEmployee.style.display="none";
-            }
-     
+            deleteBttn.onclick = () => onDeleteClick(user.id);
+              
         })
         
 	    newEdit.addEventListener("click", ()=>{
@@ -93,26 +87,31 @@ const showEmployees = () => {
     })
 }
 
+const onDeleteClick = (userId) =>{
+    const deleted = deleteUser(userId);
+    if (deleted) {
+        hideDeleteModal();
+        Users = removeUserFromList(userId, Users);
+        showEmployees(Users);
+    }  
+}
 
 const onSearch = async(search)=>{
     await searchUser(search);
-    showEmployees();
+    showEmployees(Users);
 }
-
 
 const search = document.getElementById("search")
 search.addEventListener("keyup",(event)=> {
     if(event.key === "Enter"){
          onSearch(event.target.value);
     }
-
 });
-
 
 //CARGA LA PAGINA
 const load = async () => {
-    await getAllUsers();
-    showEmployees();
+    Users = await getAllUsers();
+    showEmployees(Users);
 }
 
 load();

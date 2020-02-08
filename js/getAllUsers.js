@@ -1,9 +1,9 @@
 const getAllUsers = async () => {
     try {
         const res = await axios.get(`${baseUrl}`)
-        Users = res.data
+        return res.data
     }
     catch (err) {
-        handleError(err);
+        return null;
     }
 };

@@ -1,0 +1,22 @@
+{
+  "name": "tp03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tp3.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giguzmant/tp03.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giguzmant/tp03/issues"
+  },
+  "homepage": "https://github.com/giguzmant/tp03#readme",
+  "dependencies": {
+    "jest": "^25.1.0"
+  }
+}
