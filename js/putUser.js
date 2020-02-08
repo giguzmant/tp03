@@ -24,7 +24,7 @@ const modifyModal = () => {
         modifyUser.style.display="none";
         }
         
-        const cancelModify = document.querySelector("#form-cancel-edit");
+        const cancelModify = document.querySelector("#cancel-edit");
         cancelModify.onclick = function () {
             modifyUser.style.display="none";
         }

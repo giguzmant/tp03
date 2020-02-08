@@ -1,7 +1,15 @@
 let Users = [];
 const employeesOnTable = document.querySelector("#manage-employees");
 
-//showEmployees es como imprimir()
+const editNameValidation = document.querySelector("#validation-edit-name");
+const editEmailValidation = document.querySelector("#validation-edit-email");
+const editAddressValidation = document.querySelector("#validation-edit-address");
+const editPhoneValidation = document.querySelector("#validation-edit-phone");
+
+const modifyFullName = document.querySelector("#user-name-update");
+const modifyEmail = document.querySelector("#user-email-update");
+const modifyAddress = document.querySelector("#user-address-update");
+const modifyPhone = document.querySelector("#user-phone-update");
 
 const showEmployees = (users) => {
     employeesOnTable.innerHTML="";
@@ -52,6 +60,7 @@ const showEmployees = (users) => {
         iconosContainer.appendChild(newDelete);
         employeesOnTable.appendChild(list);
         
+        // DELETE EMPLOYEE //
         
         newDelete.addEventListener('click', ()=>{
             showDeleteModal();
@@ -60,13 +69,11 @@ const showEmployees = (users) => {
               
         })
         
+
+        // EDIT EMPLOYEE //
+        
 	    newEdit.addEventListener("click", ()=>{
             modifyModal();
-            
-            let modifyFullName = document.querySelector("#user-name-update");
-            let modifyEmail = document.querySelector("#user-email-update");
-            let modifyAddress = document.querySelector("#user-address-update");
-            let modifyPhone = document.querySelector("#user-phone-update");
             
             modifyFullName.value = user.fullname;
             modifyEmail.value =  user.email;
@@ -75,16 +82,52 @@ const showEmployees = (users) => {
             
                 const buttonModify = document.querySelector("#user-update");
                 buttonModify.onclick = function () {
-                
-                putUser(user.id, modifyFullName.value, modifyEmail.value, modifyAddress.value, modifyPhone.value);
-                const modifyUser = document.querySelector("#form-edit");
-                modifyUser.style.display="none";
-                event.preventDefault();
+                    
+                    let hasError = false;
+                    if(!modifyFullName.checkValidity()) {
+                        editNameValidation.innerHTML = modifyFullName.validationMessage;
+                        hasError = true;
+                    }
+                    
+                    if(!modifyEmail.checkValidity()) {
+                        editEmailValidation.innerHTML = modifyEmail.validationMessage;
+                        hasError = true;
+                    }
+                    
+                    if(!modifyAddress.checkValidity()) {
+                        editAddressValidation.innerHTML = modifyAddress.validationMessage;
+                        hasError = true;
+                    }
+                    
+                    if(!modifyPhone.checkValidity()) {
+                        editPhoneValidation.innerHTML = modifyPhone.validationMessage;
+                        hasError = true;
+                    }
+                    
+                    if(!hasError) { 
+                        putUser(user.id, modifyFullName.value, modifyEmail.value, modifyAddress.value, modifyPhone.value);
+                        const modifyUser = document.querySelector("#form-edit");
+                        modifyUser.style.display="none"
+                        
+                        editAddressValidation.innerHTML="";
+                        editEmailValidation.innerHTML="";
+                        editNameValidation.innerHTML="";
+                        editPhoneValidation.innerHTML="";
+                    }
                 
                 }
+                
+                editAddressValidation.innerHTML="";
+                editEmailValidation.innerHTML="";
+                editNameValidation.innerHTML="";
+                editPhoneValidation.innerHTML="";
+                
        })
+       
         
     })
+    
+ 
 }
 
 const onDeleteClick = (userId) =>{
