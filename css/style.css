@@ -73,11 +73,6 @@
   text-align: left;
   font-size: 13px;
 }
-.container-table .table-content .table .table-header .table-checkbox {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #a7a4a4;
-}
 .container-table .table-content .table .table-employee-info {
   height: 50px;
   text-align: left;
@@ -294,6 +289,40 @@
   font-family: "Varela Round", sans-serif;
   font-size: 15px;
   border-radius: 2px;
+}
+
+.container-checkbox {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+.container-checkbox input {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+}
+.container-checkbox input:checked ~ .checkmark .fa-check-square {
+  display: block;
+  color: #03A9F4;
+  font-size: 24px;
+}
+.container-checkbox input:checked ~ .checkmark {
+  border: none;
+}
+.container-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 19px;
+  width: 19px;
+  border-radius: 2px;
+  border: 1px solid #eee;
+}
+.container-checkbox .checkmark .fa-check-square {
+  display: none;
 }
 
 body {

@@ -1,0 +1,33 @@
+.container-checkbox {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+    input {
+        position: absolute;
+        display: none;
+        cursor: pointer;
+        &:checked ~ .checkmark .fa-check-square {
+            display: block;
+            color: #03A9F4;
+            font-size: 24px;
+        }
+        &:checked ~ .checkmark {
+            border: none;
+        }
+    }
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 19px;
+        width: 19px;
+        border-radius: 2px;
+        border: 1px solid #eee;
+        .fa-check-square{
+            display: none;
+        }
+    }
+}
