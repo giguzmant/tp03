@@ -1,41 +1,41 @@
 const deleteUser = async (id) => {
-    try {   
-        const res = await axios.delete(`${baseUrl}/${id}`)
-        const index = Users.findIndex(user => {
-            return user.id == id
-        })
-        borrar(index)
-        load();
+    try {
+        await axios.delete(`${baseUrl}/${id}`);
+        return true;
     }
-    catch (err){
-        handleError(err)
+    catch (err) {
+        return false;
     }
-    
 };
-const borrar = (index)=> {
-    Users.splice(index, 1)
-}
 
+const removeUserFromList = (id, users) => {
+    const index = users.findIndex(user => user.id === id);
+    users.splice(index, 1);
 
+    return users;
+};
 
-
-
-
-
-
-
-const deleteModal = () => {
+const showDeleteModal = () => {
     const deleteEmployee = document.querySelector("#delete-message");
-    deleteEmployee.style.display="block";
-    
+    deleteEmployee.style.display = "block";
+
     const closeDeleteMessage = document.querySelector(".modal-delete-close");
     closeDeleteMessage.onclick = function () {
-        deleteEmployee.style.display="none";
+        deleteEmployee.style.display = "none";
     }
-    
-    const cancelDelete = document.querySelector(".modal-cancel-delete");
-    cancelDelete.onclick= function() {
-       deleteEmployee.style.display="none";
-    }
-}
 
+    const cancelDelete = document.querySelector(".modal-cancel-delete");
+    cancelDelete.onclick = function () {
+        deleteEmployee.style.display = "none";
+    }
+};
+
+const hideDeleteModal = () =>{
+    const deleteEmployee = document.querySelector("#delete-message");
+    deleteEmployee.style.display = "none";
+};
+
+module.exports = {
+    deleteUser,
+    removeUserFromList
+}

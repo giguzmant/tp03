@@ -8,9 +8,7 @@ const putUser = async (id, fullname, email, address, phone) => {
     try {
         const res = await axios.put(`${baseUrl}/${id}`, data)
         Users = res.data;
-        showEmployees();
-        
-        
+        showEmployees(Users);
     }
     catch (err){
         handleError(err);
@@ -23,7 +21,6 @@ const modifyModal = () => {
         modifyUser.style.display="block";
         const closeModifyModal = document.querySelector("#form-close-edit");
         closeModifyModal.onclick = function () {
-    
         modifyUser.style.display="none";
         }
         
