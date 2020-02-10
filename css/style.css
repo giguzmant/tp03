@@ -105,7 +105,7 @@
 #form-add .form, #form-edit .form {
   background-color: #fefefe;
   border: 1px solid #888;
-  margin: 5% auto;
+  margin: 3% auto;
   width: 30%;
 }
 #form-add .form .form-info-required, #form-edit .form .form-info-required {
@@ -151,6 +151,12 @@
   height: 30px;
   border-radius: 3px;
   border: 1px solid #d4d4d4;
+}
+#form-add .form .form-info-required .form-labels > div p, #form-edit .form .form-info-required .form-labels > div p {
+  font-size: 10px;
+  color: red;
+  font-family: "Varela Round", sans-serif;
+  margin-bottom: 0;
 }
 #form-add .form .form-info-required .form-textarea, #form-edit .form .form-info-required .form-textarea {
   width: 100%;

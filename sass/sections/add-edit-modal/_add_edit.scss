@@ -10,7 +10,7 @@
     .form{
         background-color: $background-form;
         border: 1px solid $border-color-form;
-        margin: 5% auto;
+        margin: 3% auto;
         width: 30%;
         
         .form-info-required {
@@ -61,9 +61,17 @@
                width: 100%;
                height: 30px;
                border-radius: 3px;
-               border: 1px solid $border-color-input;
-           }
+               border: 1px solid $border-color-input;   
 
+           } 
+           
+            .form-labels > div p {
+                font-size: 10px;
+                color: red;
+                font-family: $font;
+                margin-bottom: 0;
+           }
+           
            .form-textarea {
             width: 100%;
             height: 50px;

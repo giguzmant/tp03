@@ -1,11 +1,20 @@
+let Users = [];
 const employeesOnTable = document.querySelector("#manage-employees");
 
-//showEmployees es como imprimir()
+const editNameValidation = document.querySelector("#validation-edit-name");
+const editEmailValidation = document.querySelector("#validation-edit-email");
+const editAddressValidation = document.querySelector("#validation-edit-address");
+const editPhoneValidation = document.querySelector("#validation-edit-phone");
 
-const showEmployees = () => {
+const modifyFullName = document.querySelector("#user-name-update");
+const modifyEmail = document.querySelector("#user-email-update");
+const modifyAddress = document.querySelector("#user-address-update");
+const modifyPhone = document.querySelector("#user-phone-update");
+
+const showEmployees = (users) => {
     employeesOnTable.innerHTML="";
         
-    Users.forEach(user=>{
+    users.forEach(user=>{
         let list = document.createElement("tr");
         list.classList.add("table-employee-info");
       
@@ -61,28 +70,20 @@ const showEmployees = () => {
         iconosContainer.appendChild(newDelete);
         employeesOnTable.appendChild(list);
         
+        // DELETE EMPLOYEE //
         
         newDelete.addEventListener('click', ()=>{
-            deleteModal();
-            
+            showDeleteModal();
             let deleteBttn = document.querySelector("#delete");  
-            
-            deleteBttn.onclick = function() {
-                deleteUser(user.id);
-                list.remove();
-                const deleteEmployee = document.querySelector("#delete-message");
-                deleteEmployee.style.display="none";
-            }
-     
+            deleteBttn.onclick = () => onDeleteClick(user.id);
+              
         })
+        
+
+        // EDIT EMPLOYEE //
         
 	    newEdit.addEventListener("click", ()=>{
             modifyModal();
-            
-            let modifyFullName = document.querySelector("#user-name-update");
-            let modifyEmail = document.querySelector("#user-email-update");
-            let modifyAddress = document.querySelector("#user-address-update");
-            let modifyPhone = document.querySelector("#user-phone-update");
             
             modifyFullName.value = user.fullname;
             modifyEmail.value =  user.email;
@@ -91,37 +92,85 @@ const showEmployees = () => {
             
                 const buttonModify = document.querySelector("#user-update");
                 buttonModify.onclick = function () {
-                
-                putUser(user.id, modifyFullName.value, modifyEmail.value, modifyAddress.value, modifyPhone.value);
-                const modifyUser = document.querySelector("#form-edit");
-                modifyUser.style.display="none";
-                event.preventDefault();
+                    
+                    let hasError = false;
+                    if(!modifyFullName.checkValidity()) {
+                        editNameValidation.innerHTML = modifyFullName.validationMessage;
+                        hasError = true;
+                    }
+                    
+                    if(!modifyEmail.checkValidity()) {
+                        editEmailValidation.innerHTML = modifyEmail.validationMessage;
+                        hasError = true;
+                    }
+                    
+                    if(!modifyAddress.checkValidity()) {
+                        editAddressValidation.innerHTML = modifyAddress.validationMessage;
+                        hasError = true;
+                    }
+                    
+                    if(!modifyPhone.checkValidity()) {
+                        editPhoneValidation.innerHTML = modifyPhone.validationMessage;
+                        hasError = true;
+                    }
+                    
+                    if(!hasError) { 
+                        putUser(user.id, modifyFullName.value, modifyEmail.value, modifyAddress.value, modifyPhone.value);
+                        const modifyUser = document.querySelector("#form-edit");
+                        modifyUser.style.display="none"
+                        
+                        editAddressValidation.innerHTML="";
+                        editEmailValidation.innerHTML="";
+                        editNameValidation.innerHTML="";
+                        editPhoneValidation.innerHTML="";
+                    }
                 
                 }
+                
+                editAddressValidation.innerHTML="";
+                editEmailValidation.innerHTML="";
+                editNameValidation.innerHTML="";
+                editPhoneValidation.innerHTML="";
+                
        })
+       
         
     })
+    
+ 
+}
+
+const onDeleteClick = (userId) =>{
+    const deleted = deleteUser(userId);
+    if (deleted) {
+        hideDeleteModal();
+        Users = removeUserFromList(userId, Users);
+        showEmployees(Users);
+    } else {
+        handleError("Error al eliminar usuario");
+    } 
 }
 
 const onSearch = async(search)=>{
     await searchUser(search);
-    showEmployees();
+    showEmployees(Users);
 }
-
 
 const search = document.getElementById("search")
 search.addEventListener("keyup",(event)=> {
     if(event.key === "Enter"){
          onSearch(event.target.value);
     }
-
 });
-
 
 //CARGA LA PAGINA
 const load = async () => {
-    await getAllUsers();
-    showEmployees();
+    Users = await getAllUsers();
+    if (!Users) {
+        handleError('Error al cargar');
+    } else {
+        showEmployees(Users);
+    }
 }
 
 load();
