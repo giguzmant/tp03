@@ -18,11 +18,22 @@ const showEmployees = (users) => {
         let list = document.createElement("tr");
         list.classList.add("table-employee-info");
       
-        let checkbox = document.createElement("td");
-        
-        let newId = document.createElement("input");
-        newId.setAttribute("type", "checkbox");
-        newId.classList.add("table-checkbox");
+        let checkboxContainer = document.createElement("td");
+        let checkboxLabel = document.createElement("label");
+        checkboxLabel.className="container-checkbox";
+        checkboxContainer.appendChild(checkboxLabel);
+
+        let checkboxInput = document.createElement("input");
+        checkboxInput.setAttribute("type", "checkbox");
+        checkboxInput.className="checkbox";
+        checkboxLabel.appendChild(checkboxInput);
+        let checkboxSpan = document.createElement("span");
+        checkboxSpan.className="checkmark";
+        checkboxLabel.appendChild(checkboxSpan);
+
+        let checkboxIcon = document.createElement("i");
+        checkboxIcon.className= `fa fa-check-square`
+        checkboxSpan.appendChild(checkboxIcon);
         
         let newFullName = document.createElement("td");
         newFullName.innerHTML = user.fullname;
@@ -49,8 +60,7 @@ const showEmployees = (users) => {
         newDelete.title = "Delete";
         newDelete.innerHTML = "&#xE872;";
         
-        list.appendChild(checkbox);
-        checkbox.appendChild(newId);
+        list.appendChild(checkboxContainer);
         list.appendChild(newFullName);
         list.appendChild(newEmail);
         list.appendChild(newAddress);

@@ -31,7 +31,14 @@
                 <table class="table">
 
                     <tr class="table-header">
-                        <th><input type="checkbox" class="table-checkbox" /></th>
+                        <th>
+                            <label class="container-checkbox">
+                                <input type="checkbox" id="main-checkbox">
+                                <span class=" checkmark">
+                                    <i class="fa fa-check-square"></i>
+                                </span>
+                            </label>
+                        </th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Address</th>
@@ -40,15 +47,7 @@
                     </tr>
 
                     <tbody id="manage-employees">
-                        <!--<tr class="table-employee-info">
-                       <td><input type="checkbox" class="table-checkbox"></td>
-                        <td id="table-name"></td>
-                        <td id="table-email"></td>
-                        <td id="table-address"></td>
-                        <td id="table-phone"></td>
-                        <td><i class="material-icons edit-icon" title="Edit" id="edit-icon-button"> &#xE254; </i>
-                            <i class="material-icons delete-icon" title="Delete" id="delete-icon-button"> &#xE872; </i></td>
-                    </tr>-->
+
                     </tbody>
                 </table>
             </div>
@@ -185,6 +184,7 @@
     <script src="js/postUser.js"></script>
     <script src="js/deleteUser.js"></script>
     <script src="js/ManageEmployees.js"></script>
+    <script src="js/checkbox.js"></script>
 </body>
 
 </html>
