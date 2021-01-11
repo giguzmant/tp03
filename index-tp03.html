@@ -16,14 +16,14 @@
 
 <body>
     <section class="container-table">
-        <div class="header">
+        <div class="header"> <!-- <header>-->
             <h4>Manage Employees</h4>
             <button class="button-add-employee" id="add-employee-button">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 Add New Employee
             </button>
         </div>
-        <div>
+        <div> <!--<section> o <main>-->
             <div class="container-input">
                 <input id="search" type="text" placeholder="Filter..." class="input-filter">
             </div>
@@ -56,17 +56,17 @@
 
     <!--MODAL ADD-->
     <section id="form-add">
-        <div class="form">
+        <div class="form"><!--<form>-->
             <div class="form-info-required">
-                <div class="form-header">
+                <div class="form-header"> <!--<header>-->
                     <h4>Add Employee</h4>
                     <i class="material-icons form-close" id="close-add-modal">
                         close
                     </i>
                 </div>
                 <div class="form-content">
-                    <div class="form-labels">
-                        <label>Name</label>
+                    <div class="form-labels"><!-- Esto podria ser un label-->
+                        <label>Name</label><!-- Y esto un span-->
                         <div>
                             <input type="text" id="input-name" required>
                             <p id="validation-add-name"></p>
